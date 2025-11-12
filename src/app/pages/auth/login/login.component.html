@@ -1,11 +1,22 @@
 <h1 class="page-title">Connexion</h1>
 <p class="page-sub">Accédez à votre compte pour réserver rapidement.</p>
+
 <div class="card">
-  <form class="form">
-    <input class="input" type="email" placeholder="Email">
-    <input class="input" type="password" placeholder="Mot de passe">
-    <button class="btn" type="button">Se connecter</button>
+  <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input class="input" type="email" placeholder="Email" formControlName="email" />
+    <small class="helper" *ngIf="f.email.touched && f.email.invalid">
+      {{ f.email.errors?.['required'] ? 'Email requis.' : '' }}
+      {{ f.email.errors?.['email'] ? 'Email invalide.' : '' }}
+    </small>
+
+    <input class="input" type="password" placeholder="Mot de passe" formControlName="password" />
+    <small class="helper" *ngIf="f.password.touched && f.password.invalid">
+      Mot de passe requis.
+    </small>
+
+    <button class="btn" type="submit" [disabled]="form.invalid">Se connecter</button>
   </form>
+
   <p class="helper" style="margin-top:12px">
     Pas de compte ? <a routerLink="/signup" class="link">Créer un compte</a>
   </p>

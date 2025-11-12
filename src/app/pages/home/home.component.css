@@ -1,0 +1,40 @@
+/* Hero */
+.hero { text-align:center; padding:48px 0 24px; }
+.hero h1 { font-size:52px; line-height:1.1; margin:0 0 12px; font-weight:800; }
+.hero .sub { color:var(--muted); max-width:900px; margin:0 auto 20px; }
+.hero-actions { display:flex; gap:12px; justify-content:center; }
+
+/* Titres de section */
+.block { margin:40px 0; }
+.block h2 { font-size:28px; margin:0 0 16px; font-weight:800; }
+
+/* Grille de cartes */
+.grid { display:grid; gap:18px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.card { border:1px solid #eee; border-radius:12px; background:#fff; padding:0; overflow:hidden; }
+.car .thumb { height:180px; background:#f7f7f7; display:flex; align-items:center; justify-content:center; }
+.car .thumb img { width:100%; height:100%; object-fit:cover; }
+.placeholder { font-size:56px; color:#a1a1a1; }
+.car-body { padding:14px; }
+.car-body h3 { margin:0 0 8px; font-size:18px; }
+.price { display:flex; flex-direction:column; gap:4px; }
+.price span { color:var(--muted); font-weight:500; }
+
+/* Alert assurance */
+.alert { background:#fde4e4; border:1px solid #f5c6c6; color:#4b1f1f; padding:16px; border-radius:12px; }
+.alert ul { margin:0; padding-left:18px; }
+
+/* Limites km */
+.limits { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.limit { padding:0; }
+.bar { height:10px; background:linear-gradient(90deg, #d83a3a 60%, #f2f2f2); border-radius:12px 12px 0 0; position:relative; }
+.bar .dot { position:absolute; top:-18px; left:50%; transform:translateX(-50%); background:#d83a3a; color:#fff; width:28px; height:28px; border-radius:999px; display:flex; align-items:center; justify-content:center; font-size:14px; }
+.limit-body { padding:16px; }
+.limit-body h3 { margin:0 0 6px; }
+
+/* Contact */
+.two-cols { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:24px; }
+.two-cols h4 { margin:0 0 6px; }
+
+/* CTA */
+.cta { text-align:center; padding-bottom:40px; }
+.cta h2 { font-size:48px; margin-bottom:8px; }
