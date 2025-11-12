@@ -10,15 +10,25 @@
         <ng-template #noimg><div class="placeholder">🚗</div></ng-template>
       </div>
       <div>
+        <div class="actions">
+          <a class="back" routerLink="/" aria-label="Retour à l'accueil">← Retour à l'accueil</a>
+        </div>
         <h1>{{ car.name }}</h1>
         <div class="helper">{{ car.transmission }}</div>
         <div class="price"><b>{{ car.pricePerDay }} € / jour</b></div>
         <button class="btn">Réserver</button>
       </div>
     </div>
-    <p class="muted" style="margin-top:16px">
-      Assurance incluse. Options de kilométrage disponibles.
-    </p>
+    <div class="extra">
+      <p class="muted">
+        Assurance incluse. Options de kilométrage disponibles.
+      </p>
+
+      <ul class="info-list">
+        <li><strong>Assurance:</strong> Tous risques incluse</li>
+        <li><strong>Kilométrage:</strong> 200 km/jour (options illimitées disponibles)</li>
+      </ul>
+    </div>
   </div>
 
   <ng-template #notfound>

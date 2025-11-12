@@ -1,9 +1,8 @@
 <div class="card car">
   <a class="thumb" [routerLink]="['/cars', car.id]">
-    <ng-container *ngIf="car.image; else noimg">
-      <img [src]="car.image" [alt]="car.name">
+    <ng-container>
+      <img [src]="imageUrl(car.image)" [alt]="car.name">
     </ng-container>
-    <ng-template #noimg><div class="placeholder">🚗</div></ng-template>
   </a>
 
   <div class="car-body">
