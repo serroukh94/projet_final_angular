@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
-import { FormBuilder, Validators, ReactiveFormsModule, AbstractControl, ValidationErrors, FormGroup } from '@angular/forms';
+import { RouterLink, Router } from '@angular/router';
+import {
+  FormBuilder, Validators, ReactiveFormsModule,
+  AbstractControl, ValidationErrors, FormGroup
+} from '@angular/forms';
+import { AuthService, User } from '../../../app/services/auth.service';
 
 function matchPasswords(group: AbstractControl): ValidationErrors | null {
   const pwd = group.get('password')?.value;
@@ -19,7 +23,7 @@ function matchPasswords(group: AbstractControl): ValidationErrors | null {
 export class SignupComponent {
   form!: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) {
     this.form = this.fb.group({
       fullName: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
@@ -30,16 +34,28 @@ export class SignupComponent {
     });
   }
 
-  // Cast to any so templates can access controls with dot syntax (f.fullName, f.email)
+  // accès simple dans le template : f.fullName, f.email
   get f(): any { return this.form.controls as any; }
-  // p is the controls object of the nested passwords group
+  // accès aux contrôles du sous-groupe : p.password, p.confirmPassword
   get p(): any { return (this.form.get('passwords') as any).controls; }
 
   onSubmit() {
+    // show validation errors if any
+    this.form.markAllAsTouched();
     if (this.form.invalid) return;
-    const { fullName, email, passwords } = this.form.value;
-    const payload = { fullName, email, password: passwords?.password };
-    // Temporaire : on affichera juste les valeurs (API plus tard)
-    console.log('SIGNUP DATA', payload);
+
+    const { fullName, email, passwords } = this.form.value as any;
+    const payload: User = { fullName, email, password: passwords.password };
+
+    this.auth.signup(payload).subscribe({
+      next: created => {
+        alert('Compte créé avec succès ! Vous pouvez vous connecter.');
+        this.router.navigate(['/login']);
+      },
+      error: err => {
+        console.error('Signup error', err);
+        alert('Erreur lors de la création du compte. Vérifiez la connexion au serveur.');
+      }
+    });
   }
 }

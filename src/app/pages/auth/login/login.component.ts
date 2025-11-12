@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormBuilder, Validators, ReactiveFormsModule, FormGroup } from '@angular/forms';
+import { AuthService } from '../../../app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -13,20 +14,26 @@ import { FormBuilder, Validators, ReactiveFormsModule, FormGroup } from '@angula
 export class LoginComponent {
   form!: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private auth: AuthService) {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]]
     });
   }
 
-  // Cast to any so templates can access controls with dot syntax (f.email, f.password)
+  // accès simple dans le template : f.email, f.password
   get f(): any { return this.form.controls as any; }
-
 
   onSubmit() {
     if (this.form.invalid) return;
-    // Temporaire : on affichera juste les valeurs (on branchera l’API plus tard)
-    console.log('LOGIN DATA', this.form.value);
+    const { email, password } = this.form.value;
+    this.auth.login(email!, password!).subscribe(user => {
+      if (!user) {
+        alert('Identifiants invalides');
+        return;
+      }
+      alert(`Bienvenue ${user.fullName} !`);
+      // (plus tard) : localStorage + redirection
+    });
   }
 }
