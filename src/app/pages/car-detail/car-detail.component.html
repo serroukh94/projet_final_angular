@@ -1,0 +1,27 @@
+<div *ngIf="loading" class="helper">Chargement...</div>
+
+<ng-container *ngIf="!loading">
+  <div *ngIf="car; else notfound" class="car-detail">
+    <div class="hero">
+      <div class="thumb">
+        <ng-container *ngIf="car.image; else noimg">
+          <img [src]="car.image" [alt]="car.name">
+        </ng-container>
+        <ng-template #noimg><div class="placeholder">🚗</div></ng-template>
+      </div>
+      <div>
+        <h1>{{ car.name }}</h1>
+        <div class="helper">{{ car.transmission }}</div>
+        <div class="price"><b>{{ car.pricePerDay }} € / jour</b></div>
+        <button class="btn">Réserver</button>
+      </div>
+    </div>
+    <p class="muted" style="margin-top:16px">
+      Assurance incluse. Options de kilométrage disponibles.
+    </p>
+  </div>
+
+  <ng-template #notfound>
+    <p class="helper">Voiture introuvable.</p>
+  </ng-template>
+</ng-container>

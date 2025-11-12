@@ -1,171 +1,95 @@
-<!-- Hero -->
 <section class="hero">
   <h1>Location de voiture courte durée — Région Parisienne</h1>
-  <p class="sub">
-    Service de location courte durée en région parisienne — flotte variée, options manuelles et
-    automatiques, assurance incluse.
+  <p>
+    Service de location courte durée en région parisienne — flotte variée,
+    options manuelles et automatiques, assurance incluse.
   </p>
-  <div class="hero-actions">
-    <a class="btn" href="#">Réserver via WhatsApp</a>
-    <a class="btn btn-outline" routerLink="/cars">Voir la flotte</a>
+  <div class="actions">
+    <button class="btn btn-primary">Réserver via WhatsApp</button>
+    <button class="btn btn-outline">Voir la flotte</button>
   </div>
 </section>
 
-<!-- Véhicules manuels -->
+<!-- Véhicules Manuels -->
 <section class="block">
   <h2>Véhicules Manuels</h2>
-  <div class="grid">
-    <article class="card car">
-      <div class="thumb placeholder">🚗</div>
-      <div class="car-body">
-        <h3>Opel Corsa</h3>
-        <div class="price"><b>35€ / jour</b><span>45€ / weekend</span></div>
-      </div>
-    </article>
-
-    <article class="card car">
-      <div class="thumb placeholder">🚗</div>
-      <div class="car-body">
-        <h3>Opel Corsa</h3>
-        <div class="price"><b>35€ / jour</b><span>45€ / weekend</span></div>
-      </div>
-    </article>
-
-    <article class="card car">
-      <div class="thumb placeholder">🚗</div>
-      <div class="car-body">
-        <h3>Toyota Yaris</h3>
-        <div class="price"><b>35€ / jour</b><span>45€ / weekend</span></div>
-      </div>
-    </article>
+  <div *ngIf="loading" class="helper">Chargement...</div>
+  <div class="grid" *ngIf="!loading">
+    <app-car-card
+      *ngFor="let c of manuals"
+      [car]="c"
+      (reserve)="onReserve($event)">
+    </app-car-card>
   </div>
 </section>
 
-<!-- Ligne suivante -->
-<section class="block">
-  <div class="grid">
-    <article class="card car">
-      <div class="thumb placeholder">🚗</div>
-      <div class="car-body">
-        <h3>Nissan Primera</h3>
-        <div class="price"><b>35€ / jour</b><span>45€ / weekend</span></div>
-      </div>
-    </article>
-
-    <article class="card car">
-      <div class="thumb"><img src="assets/cars/micra.jpg" alt="Nissan Micra"></div>
-      <div class="car-body">
-        <h3>Nissan Micra</h3>
-        <div class="price"><b>35€ / jour</b><span>45€ / weekend</span></div>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- Automatiques -->
+<!-- Véhicules Automatiques -->
 <section class="block">
   <h2>Véhicules Automatiques</h2>
-  <div class="grid">
-    <article class="card car">
-      <div class="thumb placeholder">🚗</div>
-      <div class="car-body">
-        <h3>Nissan Micra</h3>
-        <div class="price"><b>40€ / jour</b><span>50€ / weekend</span></div>
-      </div>
-    </article>
-
-    <article class="card car">
-      <div class="thumb"><img src="assets/cars/308.jpg" alt="Peugeot 308"></div>
-      <div class="car-body">
-        <h3>Peugeot 308</h3>
-        <div class="price"><b>40€ / jour</b><span>55€ / weekend</span></div>
-      </div>
-    </article>
-
-    <article class="card car">
-      <div class="thumb placeholder">🚗</div>
-      <div class="car-body">
-        <h3>Peugeot 5008</h3>
-        <div class="price"><b>50€ / jour</b><span>65€ / weekend</span></div>
-      </div>
-    </article>
-  </div>
-
-  <div class="grid" style="margin-top:18px">
-    <article class="card car">
-      <div class="thumb placeholder">🚗</div>
-      <div class="car-body">
-        <h3>Peugeot 508</h3>
-        <div class="price"><b>50€ / jour</b><span>60€ / weekend</span></div>
-      </div>
-    </article>
-
-    <article class="card car">
-      <div class="thumb placeholder">🚗</div>
-      <div class="car-body">
-        <h3>Renault Clio</h3>
-        <div class="price"><b>45€ / jour</b><span>55€ / weekend</span></div>
-      </div>
-    </article>
+  <div *ngIf="loading" class="helper">Chargement...</div>
+  <div class="grid" *ngIf="!loading">
+    <app-car-card
+      *ngFor="let c of autos"
+      [car]="c"
+      (reserve)="onReserve($event)">
+    </app-car-card>
   </div>
 </section>
 
 <!-- Conditions d’assurance -->
-<section class="block">
+<section class="insurance">
   <h2>Conditions d’assurance</h2>
   <div class="alert">
-    <ul>
-      <li>Assurance incluse dans le prix.</li>
-      <li>Franchise 250€ pour dégât simple &lt; 2000€.</li>
-      <li>Franchise 1000€ si dégâts &gt; 2000€.</li>
-    </ul>
+    <p>✅ Assurance incluse dans le prix.</p>
+    <p>Franchise 250€ pour dégât simple &lt;2000€.</p>
+    <p>Franchise 1000€ si dégâts &gt;2000€.</p>
   </div>
-  <p class="muted">Les prix peuvent varier selon saisons et durée de location.</p>
+  <p class="note">
+    Les prix peuvent varier selon les saisons et la durée de location.
+  </p>
 </section>
 
 <!-- Limites de kilométrage -->
-<section class="block">
+<section class="limit">
   <h2>Limites de kilométrage</h2>
-  <div class="grid limits">
-    <div class="card limit">
-      <div class="bar"><span class="dot">⚠️</span></div>
-      <div class="limit-body">
-        <h3>200 km / jour</h3>
-        <p class="muted">Forfait standard : 200 km autorisés par jour.</p>
-      </div>
+  <div class="grid">
+    <div class="limit-box">
+      <h3>200 km / jour</h3>
+      <p>Forfait standard : 200 km autorisés par jour.</p>
     </div>
-
-    <div class="card limit">
-      <div class="bar"><span class="dot">∞</span></div>
-      <div class="limit-body">
-        <h3>Km illimité (option)</h3>
-        <p class="muted">Option Km illimité disponible en supplément.</p>
-      </div>
+    <div class="limit-box">
+      <h3>Km illimité (option)</h3>
+      <p>Option disponible en supplément.</p>
     </div>
   </div>
 </section>
 
-<!-- Contact & Réservation -->
-<section class="block">
+<!-- Contact -->
+<section class="contact">
   <h2>Contact & Réservation</h2>
-  <div class="two-cols">
+  <div class="grid-contact">
     <div>
-      <h4>WhatsApp</h4>
-      <p><b>+33 6 12 19 30 50</b><br><span class="muted">Réponse rapide pour réservations et questions.</span></p>
+      <h3>WhatsApp</h3>
+      <p>+33 6 12 19 30 50</p>
+      <p>Réponse rapide pour réservations et questions.</p>
     </div>
     <div>
-      <h4>Localisation</h4>
-      <p><b>Région parisienne</b><br><span class="muted">Livraison possible selon options.</span></p>
+      <h3>Localisation</h3>
+      <p>Région parisienne</p>
+      <p>Livraison possible selon options.</p>
     </div>
   </div>
 </section>
 
-<!-- CTA final -->
-<section class="block cta">
+<!-- CTA -->
+<section class="cta">
   <h2>Prêt à Rouler ?</h2>
-  <p class="sub">Découvrez notre flotte variée (compactes, familiales, premium), profitez de nos tarifs clairs avec assurance incluse et options kilométriques flexibles. Votre prochaine aventure vous attend !</p>
-  <div class="hero-actions">
-    <a class="btn" href="#">Réserver maintenant</a>
-    <a class="btn btn-outline" href="#">Demander un devis</a>
+  <p>
+    Découvrez notre flotte variée (compactes, familiales, premium), profitez de
+    nos tarifs clairs avec assurance incluse et options kilométriques flexibles.
+  </p>
+  <div class="actions">
+    <button class="btn btn-primary">Réserver maintenant</button>
+    <button class="btn btn-outline">Demander un devis</button>
   </div>
 </section>

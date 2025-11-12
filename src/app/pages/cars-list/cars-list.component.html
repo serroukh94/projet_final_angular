@@ -1,0 +1,12 @@
+<h1 class="page-title">Notre flotte</h1>
+<p class="page-sub">Découvrez toutes nos voitures manuelles et automatiques.</p>
+
+<div *ngIf="loading" class="helper">Chargement...</div>
+
+<div class="grid" *ngIf="!loading">
+  <app-car-card
+    *ngFor="let c of cars"
+    [car]="c"
+    (reserve)="onReserve($event)"
+  ></app-car-card>
+</div>

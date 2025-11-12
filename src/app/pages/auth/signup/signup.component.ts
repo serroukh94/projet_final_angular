@@ -5,7 +5,7 @@ import {
   FormBuilder, Validators, ReactiveFormsModule,
   AbstractControl, ValidationErrors, FormGroup
 } from '@angular/forms';
-import { AuthService, User } from '../../../app/services/auth.service';
+import { AuthService, User } from '../../../services/auth.service';
 
 function matchPasswords(group: AbstractControl): ValidationErrors | null {
   const pwd = group.get('password')?.value;
