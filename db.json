@@ -29,6 +29,18 @@
       "fullName": "Samlana",
       "email": "sam@gmail.com",
       "password": "123456"
+    },
+    {
+      "id": "540d",
+      "fullName": "rr",
+      "email": "Redjan@gmail.com",
+      "password": "123455"
+    },
+    {
+      "id": "fed9",
+      "fullName": "rr",
+      "email": "Redjan@gmail.com",
+      "password": "123455"
     }
   ],
   "cars": [
@@ -103,5 +115,24 @@
       "image": "assets/images/voiture.webp"
     }
   ],
-  "bookings": []
+  "bookings": [
+    {
+      "id": "7fd5",
+      "fullName": "rfrfrfrfffrfr",
+      "email": "frfr",
+      "carModel": "Peugeot 208",
+      "startDate": "2025-11-05",
+      "endDate": "2025-11-18",
+      "message": "frf"
+    },
+    {
+      "id": "dd54",
+      "fullName": "rr",
+      "email": "R@GMAIL.com",
+      "carModel": "Renault Clio",
+      "startDate": "2025-11-18",
+      "endDate": "2025-11-21",
+      "message": "fjezidj"
+    }
+  ]
 }
