@@ -40,15 +40,20 @@ export class SignupComponent {
   get p(): any { return (this.form.get('passwords') as any).controls; }
 
   onSubmit() {
+    console.log('Signup onSubmit invoked, valid=', this.form.valid);
     // show validation errors if any
     this.form.markAllAsTouched();
-    if (this.form.invalid) return;
+    if (this.form.invalid) {
+      console.warn('Form invalid on submit', this.form);
+      return;
+    }
 
     const { fullName, email, passwords } = this.form.value as any;
     const payload: User = { fullName, email, password: passwords.password };
 
     this.auth.signup(payload).subscribe({
       next: created => {
+        console.log('Signup success response', created);
         alert('Compte créé avec succès ! Vous pouvez vous connecter.');
         this.router.navigate(['/login']);
       },

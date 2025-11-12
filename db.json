@@ -1,13 +1,60 @@
 {
   "users": [
-    { "id": 1, "fullName": "Test User", "email": "test@demo.com", "password": "123456" }
+    {
+      "id": "1",
+      "fullName": "Test User",
+      "email": "test@demo.com",
+      "password": "123456"
+    },
+    {
+      "id": "b37e",
+      "email": "autotest@example.com",
+      "fullName": "Auto Test",
+      "password": "secret"
+    },
+    {
+      "id": "0e1a",
+      "fullName": "egyeghdug",
+      "email": "red@gmail.com",
+      "password": "123456"
+    }
   ],
   "cars": [
-    { "id": 1, "name": "Opel Corsa", "pricePerDay": 35, "transmission": "Manuelle", "image": "" },
-    { "id": 2, "name": "Toyota Yaris", "pricePerDay": 35, "transmission": "Manuelle", "image": "" },
-    { "id": 3, "name": "Nissan Micra", "pricePerDay": 40, "transmission": "Automatique", "image": "" },
-    { "id": 4, "name": "Peugeot 308", "pricePerDay": 40, "transmission": "Automatique", "image": "" },
-    { "id": 5, "name": "Peugeot 5008", "pricePerDay": 50, "transmission": "Automatique", "image": "" }
+    {
+      "id": "1",
+      "name": "Opel Corsa",
+      "pricePerDay": 35,
+      "transmission": "Manuelle",
+      "image": ""
+    },
+    {
+      "id": "2",
+      "name": "Toyota Yaris",
+      "pricePerDay": 35,
+      "transmission": "Manuelle",
+      "image": ""
+    },
+    {
+      "id": "3",
+      "name": "Nissan Micra",
+      "pricePerDay": 40,
+      "transmission": "Automatique",
+      "image": ""
+    },
+    {
+      "id": "4",
+      "name": "Peugeot 308",
+      "pricePerDay": 40,
+      "transmission": "Automatique",
+      "image": ""
+    },
+    {
+      "id": "5",
+      "name": "Peugeot 5008",
+      "pricePerDay": 50,
+      "transmission": "Automatique",
+      "image": ""
+    }
   ],
   "bookings": []
 }
