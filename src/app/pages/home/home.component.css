@@ -1,49 +1,270 @@
-/* Hero */
-.hero { text-align:center; padding:48px 0 24px; }
-.hero h1 { font-size:52px; line-height:1.1; margin:0 0 12px; font-weight:800; }
-.hero .sub { color:var(--muted); max-width:900px; margin:0 auto 20px; }
-.hero-actions { display:flex; gap:12px; justify-content:center; }
+/* ================= HERO ================= */
+.hero {
+  text-align: center;
+  padding: 48px 0 24px;
+}
+.hero h1 {
+  font-size: 52px;
+  line-height: 1.1;
+  margin: 0 0 12px;
+  font-weight: 800;
+}
+.hero .sub {
+  color: var(--muted);
+  max-width: 900px;
+  margin: 0 auto 20px;
+}
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
 
-/* Titres de section */
-.block { margin:40px 0; }
-.block h2 { font-size:28px; margin:0 0 16px; font-weight:800; }
+/* ================= SECTIONS GÉNÉRALES ================= */
+.block {
+  margin: 40px 0;
+}
+.block h2 {
+  font-size: 28px;
+  margin: 0 0 16px;
+  font-weight: 800;
+}
 
-/* Grille de cartes */
-.grid { display:grid; gap:18px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
-.card { border:1px solid #eee; border-radius:12px; background:#fff; padding:0; overflow:hidden; }
-.car .thumb { height:180px; background:#f7f7f7; display:flex; align-items:center; justify-content:center; }
-.car .thumb img { width:100%; height:100%; object-fit:cover; }
-.placeholder { font-size:56px; color:#a1a1a1; }
-.car-body { padding:14px; }
-.car-body h3 { margin:0 0 8px; font-size:18px; }
-.price { display:flex; flex-direction:column; gap:4px; }
-.price span { color:var(--muted); font-weight:500; }
+/* ================= GRILLE DE CARTES ================= */
+.grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+.card {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background: #fff;
+  padding: 0;
+  overflow: hidden;
+}
+.car .thumb {
+  height: 180px;
+  background: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.car .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.placeholder {
+  font-size: 56px;
+  color: #a1a1a1;
+}
+.car-body {
+  padding: 14px;
+}
+.car-body h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+.price {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.price span {
+  color: var(--muted);
+  font-weight: 500;
+}
 
-/* Alert assurance */
-.alert { background:#fce7e9; border:1px solid #f5c6c6; color:#4b1f1f; padding:22px 26px; border-radius:10px; position:relative; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.4); }
-.alert::before { content: ""; position:absolute; left:18px; top:18px; width:22px; height:22px; background:#0ea5a9; border-radius:6px; display:inline-block; box-shadow: 0 1px 0 rgba(0,0,0,0.06); }
-.alert p { margin:6px 0; }
-.alert ul { margin:0; padding-left:18px; }
+/* ================= CONDITIONS D’ASSURANCE ================= */
+.insurance {
+  margin-top: 60px;
+}
+.insurance h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+.insurance-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: #fce7e9;
+  border: 1px solid #f5c6c6;
+  border-radius: 12px;
+  padding: 20px 26px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+}
+.insurance-alert .icon {
+  background: #0ea5a9;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  font-size: 22px;
+}
+.insurance-alert .text p {
+  margin: 4px 0;
+  color: #3f1f1f;
+  font-size: 16px;
+}
+.insurance .note {
+  color: #6b6b6b;
+  font-size: 15px;
+  margin-top: 8px;
+}
 
-/* Limites km */
-.limits { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
-.limit { padding:0; }
-.limit .grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:20px; }
-.limit-box { background:#fff; border:1px solid #f3d6d6; border-radius:10px; padding:18px; position:relative; overflow:visible; }
-.limit-box::before { content:""; position:absolute; top:-12px; left:18px; right:18px; height:8px; background:#d83a3a; border-radius:6px; }
-.limit-box::after { content:""; position:absolute; top:-28px; left:50%; transform:translateX(-50%); width:34px; height:34px; background:#d83a3a; color:#fff; border-radius:999px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; box-shadow:0 2px 6px rgba(0,0,0,0.08); }
-.limit-box:nth-child(1)::after { content: "!"; }
-.limit-box:nth-child(2)::after { content: "∞"; }
-.limit-box h3 { margin:0 0 8px; }
-.limit-box p { margin:0; color:var(--muted); }
+/* ================= LIMITES DE KILOMÉTRAGE ================= */
+.limit {
+  margin-top: 60px;
+}
+.limit h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+.limit .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+.limit-box {
+  background: #fff;
+  border: 1px solid #f3d6d6;
+  border-radius: 10px;
+  padding: 24px;
+  position: relative;
+  overflow: visible;
+  text-align: left;
+}
+.limit-box::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 18px;
+  right: 18px;
+  height: 8px;
+  background: #d83a3a;
+  border-radius: 6px;
+}
+.limit-icon {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #d83a3a;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+.limit-box h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+.limit-box p {
+  color: #6b6b6b;
+}
 
-/* Contact */
-.contact { padding-top:18px; }
-.grid-contact { display:grid; grid-template-columns: 1fr 1fr; gap:36px; align-items:start; max-width:900px; margin:0 auto; }
-.grid-contact h3 { margin:0 0 8px; }
-.contact h2 { text-align:left; }
-.contact p { margin:6px 0 12px; color:var(--muted); }
+/* ================= CONTACT & RÉSERVATION ================= */
+.contact {
+  margin-top: 60px;
+}
+.contact h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+.grid-contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.grid-contact h3 {
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+.grid-contact p {
+  margin: 4px 0;
+  color: #555;
+  font-size: 16px;
+}
+.contact-number {
+  font-weight: 700;
+  font-size: 18px;
+}
 
-/* CTA */
-.cta { text-align:center; padding-bottom:40px; }
-.cta h2 { font-size:48px; margin-bottom:8px; }
+/* ================= CTA ================= */
+.cta {
+  text-align: center;
+  margin-top: 60px;
+  padding-bottom: 60px;
+}
+.cta h2 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.cta p {
+  max-width: 800px;
+  margin: 0 auto 24px;
+  color: #444;
+  font-size: 17px;
+}
+.cta .actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+.btn {
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 12px 24px;
+  cursor: pointer;
+}
+.btn-primary {
+  background: #d83a3a;
+  color: white;
+  border: none;
+}
+.btn-outline {
+  border: 2px solid #d83a3a;
+  color: #d83a3a;
+  background: white;
+}
+.btn-outline:hover {
+  background: #fce7e9;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+  .limit .grid {
+    grid-template-columns: 1fr;
+  }
+  .grid-contact {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .cta h2 {
+    font-size: 32px;
+  }
+  .cta p {
+    font-size: 15px;
+  }
+}

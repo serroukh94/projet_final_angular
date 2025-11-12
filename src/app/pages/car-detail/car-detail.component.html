@@ -5,10 +5,11 @@
     <div class="hero">
       <div class="thumb">
         <ng-container *ngIf="car.image; else noimg">
-          <img [src]="car.image" [alt]="car.name">
+          <img [src]="car.image" [alt]="car.name" />
         </ng-container>
         <ng-template #noimg><div class="placeholder">🚗</div></ng-template>
       </div>
+
       <div>
         <div class="actions">
           <a class="back" routerLink="/" aria-label="Retour à l'accueil">← Retour à l'accueil</a>
@@ -19,16 +20,47 @@
         <button class="btn">Réserver</button>
       </div>
     </div>
-    <div class="extra">
-      <p class="muted">
-        Assurance incluse. Options de kilométrage disponibles.
-      </p>
 
+    <div class="extra">
+      <p class="muted">Assurance incluse. Options de kilométrage disponibles.</p>
       <ul class="info-list">
         <li><strong>Assurance:</strong> Tous risques incluse</li>
         <li><strong>Kilométrage:</strong> 200 km/jour (options illimitées disponibles)</li>
       </ul>
     </div>
+
+    <hr class="divider" />
+
+    <section class="details">
+      <h2>À propos de la voiture</h2>
+      <p>
+        La <b>{{ car.name }}</b> est idéale pour vos déplacements urbains et périurbains. Compacte, économique et
+        agréable à conduire, elle offre un excellent compromis entre confort et performance.
+      </p>
+      <p>Année du modèle : <b>2021</b> • Boîte : <b>{{ car.transmission }}</b> • Portes : <b>5</b> • Places : <b>5</b></p>
+    </section>
+
+    <section class="equipments">
+      <h2>Équipements & Caractéristiques</h2>
+      <ul class="equip-list">
+        <li>✅ Climatisation automatique</li>
+        <li>✅ GPS intégré avec écran tactile</li>
+        <li>✅ Bluetooth & Apple CarPlay / Android Auto</li>
+        <li>✅ Caméra de recul & capteurs de stationnement</li>
+        <li>✅ Régulateur de vitesse</li>
+        <li>✅ ABS + ESP</li>
+      </ul>
+    </section>
+
+    <section class="conditions">
+      <h2>Conditions de location</h2>
+      <ul>
+        <li>🔹 Permis depuis 2 ans minimum</li>
+        <li>🔹 Âge minimum : 21 ans</li>
+        <li>🔹 Caution : 800 €</li>
+        <li>🔹 Livraison possible en région parisienne</li>
+      </ul>
+    </section>
   </div>
 
   <ng-template #notfound>
