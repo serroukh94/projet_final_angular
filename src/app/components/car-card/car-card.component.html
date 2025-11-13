@@ -8,11 +8,11 @@
   <div class="car-body">
     <h3>{{ car.name }}</h3>
     <div class="helper">{{ car.transmission }}</div>
-    <div class="price"><b>{{ car.pricePerDay }} € / jour</b></div>
+    <div class="price"><b>{{ car.pricePerDay | currencyEur }} / jour</b></div>
 
     <div class="actions">
       <a [routerLink]="['/cars', car.id]" class="btn">Détails</a>
-      <button class="btn btn-outline" type="button" (click)="onReserve()">Réserver</button>
+      <a routerLink="/booking" class="btn btn-outline">Réserver</a>
     </div>
   </div>
 </div>

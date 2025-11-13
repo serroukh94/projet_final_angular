@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { CarsService, Car } from '../../services/cars.service';
 import { CarCardComponent } from '../../components/car-card/car-card.component';
 
@@ -14,7 +15,7 @@ export class CarsListComponent {
   cars: Car[] = [];
   loading = true;
 
-  constructor(private carsSvc: CarsService) {
+  constructor(private carsSvc: CarsService, private router: Router) {
     this.carsSvc.getCars().subscribe({
       next: (list) => { this.cars = list; this.loading = false; },
       error: () => { this.loading = false; }
@@ -22,7 +23,6 @@ export class CarsListComponent {
   }
 
   onReserve(car: Car) {
-    alert(`Réservation (démo) pour: ${car.name}`);
-    // plus tard: navigation vers /booking?carId=...
+    this.router.navigate(['/booking']);
   }
 }
