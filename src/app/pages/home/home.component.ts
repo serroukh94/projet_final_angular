@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { Car, CarsService } from '../../services/cars.service';
 import { CarCardComponent } from '../../components/car-card/car-card.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, CarCardComponent],
+  imports: [CommonModule, CarCardComponent, RouterLink],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

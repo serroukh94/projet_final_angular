@@ -1,0 +1,399 @@
+.summary-page {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.summary-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.logo {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.summary-header h1 {
+  font-size: 38px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.ref-number {
+  font-size: 14px;
+  color: #6b7280;
+  font-family: monospace;
+  background: #f3f4f6;
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.summary-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+  padding: 40px;
+  border: 1px solid #e5e7eb;
+}
+
+.section {
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 2px solid #f3f4f6;
+}
+
+.section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.section h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.info-item .label {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-item .value {
+  font-size: 16px;
+  color: #111827;
+  font-weight: 600;
+}
+
+.car-highlight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  border-radius: 16px;
+  border: 2px solid #fecaca;
+  margin-bottom: 24px;
+}
+
+.car-icon {
+  font-size: 48px;
+}
+
+.car-info {
+  flex: 1;
+}
+
+.car-info h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.car-info p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.car-price {
+  font-size: 32px;
+  font-weight: 800;
+  color: #d83a3a;
+}
+
+.car-price span {
+  font-size: 16px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.dates-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #f9fafb;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.date-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 10px;
+  border: 2px solid #e5e7eb;
+}
+
+.date-label {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.date-value {
+  font-size: 16px;
+  color: #111827;
+  font-weight: 700;
+}
+
+.arrow {
+  font-size: 24px;
+  color: #d83a3a;
+  font-weight: bold;
+}
+
+.duration-badge {
+  padding: 12px 20px;
+  background: #d83a3a;
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.option-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.option-item:last-child {
+  margin-bottom: 0;
+}
+
+.option-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.option-name .icon {
+  font-size: 20px;
+}
+
+.option-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.option-price.included {
+  color: #059669;
+}
+
+.message-box {
+  background: #fffbeb;
+  border: 2px solid #fde68a;
+  padding: 16px;
+  border-radius: 10px;
+  color: #92400e;
+  line-height: 1.6;
+}
+
+.pricing-section {
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  padding: 24px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
+
+.price-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  color: #374151;
+}
+
+.included-text {
+  color: #059669;
+  font-weight: 600;
+}
+
+.price-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 3px solid #d1d5db;
+}
+
+.price-total span:first-child {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.total-amount {
+  font-size: 36px;
+  font-weight: 800;
+  color: #d83a3a;
+}
+
+.notice-box {
+  background: #fef3c7;
+  border: 2px solid #fcd34d;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 32px;
+}
+
+.notice-box p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #92400e;
+  line-height: 1.6;
+}
+
+.notice-box strong {
+  color: #78350f;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+}
+
+.btn-primary {
+  background: #d83a3a;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(216, 58, 58, 0.3);
+}
+
+.btn-primary:hover {
+  background: #b02e2e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(216, 58, 58, 0.4);
+}
+
+.btn-secondary {
+  background: #059669;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+}
+
+.btn-secondary:hover {
+  background: #047857;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #374151;
+  border: 2px solid #d1d5db;
+}
+
+.btn-outline:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.footer-info {
+  text-align: center;
+  margin-top: 32px;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 12px;
+}
+
+.footer-info p {
+  font-size: 15px;
+  color: #6b7280;
+}
+
+.footer-info strong {
+  color: #d83a3a;
+}
+
+@media print {
+  .actions, .footer-info {
+    display: none;
+  }
+  
+  .summary-page {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .summary-card {
+    padding: 24px;
+  }
+  
+  .car-highlight {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .dates-row {
+    flex-direction: column;
+  }
+  
+  .arrow {
+    transform: rotate(90deg);
+  }
+  
+  .actions {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
