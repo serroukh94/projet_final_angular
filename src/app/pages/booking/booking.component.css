@@ -63,6 +63,18 @@
   font-size: 15px;
 }
 
+.form-group .error {
+  color: #dc2626;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.form-group input.ng-invalid.ng-touched,
+.form-group select.ng-invalid.ng-touched,
+.form-group textarea.ng-invalid.ng-touched {
+  border-color: #dc2626;
+}
+
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
