@@ -5,13 +5,13 @@
     options manuelles et automatiques, assurance incluse.
   </p>
   <div class="actions">
-    <button class="btn btn-primary">Réserver via WhatsApp</button>
-    <button class="btn btn-outline">Voir la flotte</button>
+    <a href="https://wa.me/33612193050" target="_blank" class="btn btn-primary">Réserver via WhatsApp</a>
+    <a href="#voitures" class="btn btn-outline">Voir la flotte</a>
   </div>
 </section>
 
 <!-- Véhicules Manuels -->
-<section class="block">
+<section class="block" id="voitures">
   <h2>Véhicules Manuels</h2>
   <div *ngIf="loading" class="helper">Chargement...</div>
   <div class="grid" *ngIf="!loading">
@@ -36,12 +36,12 @@
   </div>
 </section>
 
-<!-- Conditions d’assurance -->
+<!-- Conditions d'assurance -->
 <section class="insurance">
-  <h2>Conditions d’assurance</h2>
+  <h2>Conditions d'assurance</h2>
   <div class="alert insurance-alert">
     <div class="icon">
-      <span class="material-symbols-outlined">verified_user</span>
+      <span>🛡️</span>
     </div>
     <div class="text">
       <p>Assurance incluse dans le prix.</p>
@@ -95,7 +95,7 @@
     Découvrez notre flotte variée (compactes, familiales, premium), profitez de nos tarifs clairs avec assurance incluse et options kilométriques flexibles.
   </p>
   <div class="actions">
-    <button class="btn btn-primary">Réserver maintenant</button>
+    <a href="#voitures" class="btn btn-primary">Réserver maintenant</a>
     <button class="btn btn-outline">Demander un devis</button>
   </div>
 </section>
