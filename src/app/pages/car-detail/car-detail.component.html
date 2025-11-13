@@ -33,10 +33,7 @@
 
     <section class="details">
       <h2>À propos de la voiture</h2>
-      <p>
-        La <b>{{ car.name }}</b> est idéale pour vos déplacements urbains et périurbains. Compacte, économique et
-        agréable à conduire, elle offre un excellent compromis entre confort et performance.
-      </p>
+      <p>{{ car.description || 'La ' + car.name + ' est idéale pour vos déplacements urbains et périurbains.' }}</p>
       <p>Année du modèle : <b>2021</b> • Boîte : <b>{{ car.transmission }}</b> • Portes : <b>5</b> • Places : <b>5</b></p>
     </section>
 

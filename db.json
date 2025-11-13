@@ -49,70 +49,80 @@
       "name": "Opel Corsa",
       "pricePerDay": 35,
       "transmission": "Manuelle",
-      "image": "assets/images/voiture.webp"
+      "image": "assets/images/voiture.webp",
+      "description": "Citadine compacte et agile, l'Opel Corsa est parfaite pour naviguer en ville. Son gabarit réduit facilite le stationnement, tandis que sa consommation modérée en fait un choix économique pour vos trajets quotidiens."
     },
     {
       "id": "2",
       "name": "Toyota Yaris",
       "pricePerDay": 35,
       "transmission": "Manuelle",
-      "image": "assets/images/voiture.webp"
+      "image": "assets/images/voiture.webp",
+      "description": "Reconnue pour sa fiabilité légendaire, la Toyota Yaris offre un habitacle spacieux malgré ses dimensions compactes. Idéale pour les déplacements urbains avec un excellent rapport qualité-prix."
     },
     {
       "id": "3",
       "name": "Nissan Micra",
       "pricePerDay": 40,
       "transmission": "Automatique",
-      "image": "assets/images/voiture.webp"
+      "image": "assets/images/voiture.webp",
+      "description": "La Nissan Micra automatique combine simplicité et confort de conduite. Sa boîte automatique rend la conduite en ville particulièrement agréable, sans effort dans les embouteillages."
     },
     {
       "id": "4",
       "name": "Peugeot 308",
       "pricePerDay": 40,
       "transmission": "Automatique",
-      "image": "assets/images/voiture.webp"
+      "image": "assets/images/voiture.webp",
+      "description": "Berline compacte élégante, la Peugeot 308 propose un habitacle moderne et technologique. Sa boîte automatique et son confort de suspension en font une excellente option pour les trajets moyennes distances."
     },
     {
       "id": "5",
       "name": "Peugeot 5008",
       "pricePerDay": 50,
       "transmission": "Automatique",
-      "image": "assets/images/voiture.webp"
+      "image": "assets/images/voiture.webp",
+      "description": "SUV familial spacieux, le Peugeot 5008 peut accueillir jusqu'à 7 passagers. Idéal pour les déplacements en famille ou les voyages avec bagages, il allie confort et modularité avec une position de conduite surélevée."
     },
     {
       "id": "6",
       "name": "Renault Clio",
       "pricePerDay": 45,
       "transmission": "Manuelle",
-      "image": "assets/images/voiture.webp"
+      "image": "assets/images/voiture.webp",
+      "description": "Best-seller français, la Renault Clio séduit par son design moderne et son équipement généreux. Polyvalente, elle convient aussi bien pour la ville que pour les escapades du week-end."
     },
     {
       "id": "7",
       "name": "Peugeot 208",
       "pricePerDay": 38,
       "transmission": "Manuelle",
-      "image": "assets/images/voiture.webp"
+      "image": "assets/images/voiture.webp",
+      "description": "Citadine dynamique au design sportif, la Peugeot 208 offre un plaisir de conduite affirmé. Son i-Cockpit innovant et sa maniabilité en font un choix apprécié des conducteurs urbains."
     },
     {
       "id": "8",
       "name": "Citroën C3",
       "pricePerDay": 37,
       "transmission": "Manuelle",
-      "image": "assets/images/voiture.webp"
+      "image": "assets/images/voiture.webp",
+      "description": "Avec son style original et ses suspensions confortables, la Citroën C3 privilégie le bien-être à bord. Ses sièges moelleux et sa garde au sol généreuse assurent une conduite détendue sur tous types de routes."
     },
     {
       "id": "9",
       "name": "Ford Fiesta",
       "pricePerDay": 36,
       "transmission": "Manuelle",
-      "image": "assets/images/voiture.webp"
+      "image": "assets/images/voiture.webp",
+      "description": "Sportive et fun, la Ford Fiesta offre un comportement routier dynamique. Compacte mais spacieuse, elle est équipée de technologies modernes et se distingue par son excellent rapport performances/consommation."
     },
     {
       "id": "10",
       "name": "Volkswagen Polo",
       "pricePerDay": 39,
       "transmission": "Automatique",
-      "image": "assets/images/voiture.webp"
+      "image": "assets/images/voiture.webp",
+      "description": "La Volkswagen Polo incarne la qualité allemande avec une finition soignée et une fiabilité reconnue. Sa boîte automatique et son insonorisation efficace garantissent un confort de conduite premium pour une citadine."
     }
   ],
   "bookings": [
@@ -133,6 +143,75 @@
       "startDate": "2025-11-18",
       "endDate": "2025-11-21",
       "message": "fjezidj"
+    },
+    {
+      "id": "4b92",
+      "fullName": "egyeghdug",
+      "email": "red@gmail.com",
+      "carModel": "Toyota Yaris",
+      "startDate": "2025-12-06",
+      "endDate": "2025-12-25",
+      "message": "jjijijjijiji"
+    },
+    {
+      "id": "705a",
+      "fullName": "egyeghduge",
+      "email": "redjanrajabaly@gmail.com",
+      "carModel": "Toyota Yaris",
+      "startDate": "2025-11-21",
+      "endDate": "2025-11-27",
+      "message": "bhbbh"
+    },
+    {
+      "id": "4ad2",
+      "fullName": "egyeghdug",
+      "email": "red@gmail.com",
+      "carModel": "Peugeot 208",
+      "startDate": "2025-11-20",
+      "endDate": "2025-11-28",
+      "message": "scdcdc"
+    },
+    {
+      "id": "4be4",
+      "fullName": "egyeghdug",
+      "email": "red@gmail.com",
+      "carModel": "Peugeot 308",
+      "startDate": "2025-11-22",
+      "endDate": "2025-11-26",
+      "message": "frfr"
+    },
+    {
+      "id": "096b",
+      "fullName": "egyeghdug",
+      "email": "red@gmail.com",
+      "carModel": "Toyota Yaris",
+      "startDate": "2025-11-29",
+      "endDate": "2025-12-06",
+      "message": "yessss",
+      "numberOfDays": 7,
+      "totalPrice": 245
+    },
+    {
+      "id": "78df",
+      "fullName": "egyeghdug",
+      "email": "red@gmail.com",
+      "carModel": "Ford Fiesta",
+      "startDate": "2025-11-28",
+      "endDate": "2025-12-04",
+      "message": "OAUISNAMNNN",
+      "numberOfDays": 6,
+      "totalPrice": 216
+    },
+    {
+      "id": "57b5",
+      "fullName": "egyeghdug",
+      "email": "red@gmail.com",
+      "carModel": "Peugeot 308",
+      "startDate": "2025-11-27",
+      "endDate": "2025-12-06",
+      "message": "MOHALED",
+      "numberOfDays": 9,
+      "totalPrice": 360
     }
   ]
 }

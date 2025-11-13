@@ -1,17 +1,20 @@
 <div class="booking-page">
+  <a routerLink="/" class="back-link">← Retour à l'accueil</a>
   <h1>Réserver une voiture</h1>
   <p class="subtitle">Remplissez les informations ci-dessous pour votre réservation.</p>
 
-  <form class="booking-form">
+  <form [formGroup]="bookingForm" (ngSubmit)="submitForm()" class="booking-form">
     <div class="form-group">
       <label for="fullName">Nom complet</label>
       <input
         id="fullName"
         type="text"
         placeholder="Ex: Jean Dupont"
-        [(ngModel)]="booking.fullName"
-        name="fullName"
+        formControlName="fullName"
       />
+      <small class="error" *ngIf="bookingForm.get('fullName')?.invalid && bookingForm.get('fullName')?.touched">
+        Le nom complet est requis (minimum 3 caractères).
+      </small>
     </div>
 
     <div class="form-group">
@@ -20,24 +23,26 @@
         id="email"
         type="email"
         placeholder="Ex: jean.dupont@gmail.com"
-        [(ngModel)]="booking.email"
-        name="email"
+        formControlName="email"
       />
+      <small class="error" *ngIf="bookingForm.get('email')?.invalid && bookingForm.get('email')?.touched">
+        Veuillez entrer une adresse email valide.
+      </small>
     </div>
 
     <div class="form-group">
       <label for="carModel">Modèle de voiture</label>
       <select
         id="carModel"
-        [(ngModel)]="booking.carModel"
-        name="carModel"
+        formControlName="carModel"
+        (change)="onCarModelChange()"
       >
         <option value="">-- Sélectionnez une voiture --</option>
-        <option value="Toyota Yaris">Toyota Yaris</option>
-        <option value="Peugeot 208">Peugeot 208</option>
-        <option value="Renault Clio">Renault Clio</option>
-        <option value="Volkswagen Polo">Volkswagen Polo</option>
+        <option *ngFor="let car of allCars" [value]="car.name">{{ car.name }} - {{ car.pricePerDay }}€/jour</option>
       </select>
+      <small class="error" *ngIf="bookingForm.get('carModel')?.invalid && bookingForm.get('carModel')?.touched">
+        Veuillez sélectionner une voiture.
+      </small>
     </div>
 
     <div class="form-row">
@@ -46,9 +51,11 @@
         <input
           id="startDate"
           type="date"
-          [(ngModel)]="booking.startDate"
-          name="startDate"
+          formControlName="startDate"
         />
+        <small class="error" *ngIf="bookingForm.get('startDate')?.invalid && bookingForm.get('startDate')?.touched">
+          La date de début est requise.
+        </small>
       </div>
 
       <div class="form-group">
@@ -56,10 +63,19 @@
         <input
           id="endDate"
           type="date"
-          [(ngModel)]="booking.endDate"
-          name="endDate"
+          formControlName="endDate"
+          [min]="bookingForm.get('startDate')?.value"
         />
+        <small class="error" *ngIf="bookingForm.get('endDate')?.invalid && bookingForm.get('endDate')?.touched">
+          La date de fin est requise.
+        </small>
       </div>
+    </div>
+
+    <div *ngIf="numberOfDays > 0 && selectedCar" class="price-summary">
+      <p><strong>Durée :</strong> {{ numberOfDays }} jour(s)</p>
+      <p><strong>Prix par jour :</strong> {{ selectedCar.pricePerDay }} €</p>
+      <p class="total"><strong>Prix total :</strong> {{ totalPrice }} €</p>
     </div>
 
     <div class="form-group">
@@ -67,13 +83,12 @@
       <textarea
         id="message"
         rows="3"
-        placeholder="Ex: Besoin d’un siège bébé, livraison à domicile, etc."
-        [(ngModel)]="booking.message"
-        name="message"
+        placeholder="Ex: Besoin d'un siège bébé, livraison à domicile, etc."
+        formControlName="message"
       ></textarea>
     </div>
 
-    <button type="button" class="btn-submit" (click)="submitForm()">Confirmer la réservation</button>
+    <button type="submit" class="btn-submit">Confirmer la réservation</button>
   </form>
 
   <p *ngIf="successMessage" class="success">{{ successMessage }}</p>

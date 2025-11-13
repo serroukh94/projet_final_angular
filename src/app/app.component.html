@@ -2,8 +2,14 @@
   <div class="container">
     <a class="brand" routerLink="/"></a>
     <nav class="nav">
-      <a routerLink="/login" class="btn btn-outline">Se connecter</a>
-      <a routerLink="/signup" class="btn">S'inscrire</a>
+      <ng-container *ngIf="currentUser; else notLoggedIn">
+        <span class="user-info">{{ currentUser.fullName }}</span>
+        <button class="btn btn-outline" (click)="logout()">Déconnexion</button>
+      </ng-container>
+      <ng-template #notLoggedIn>
+        <a routerLink="/login" class="btn btn-outline">Se connecter</a>
+        <a routerLink="/signup" class="btn">S'inscrire</a>
+      </ng-template>
     </nav>
   </div>
 </header>

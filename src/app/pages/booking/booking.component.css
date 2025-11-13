@@ -7,6 +7,23 @@
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #d83a3a;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 16px;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: #b02e2e;
+  text-decoration: underline;
+}
+
 .booking-page h1 {
   font-size: 32px;
   font-weight: 800;
@@ -44,6 +61,18 @@
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   font-size: 15px;
+}
+
+.form-group .error {
+  color: #dc2626;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.form-group input.ng-invalid.ng-touched,
+.form-group select.ng-invalid.ng-touched,
+.form-group textarea.ng-invalid.ng-touched {
+  border-color: #dc2626;
 }
 
 .form-group input:focus,
