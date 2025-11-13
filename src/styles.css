@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+  --primary:#d83a3a;
+  --primary-600:#c93434;
+  --text:#111827;
+  --muted:#6b7280;
+  --bg:#ffffff;
+  --radius:12px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif}
+.container{max-width:1100px;margin:0 auto;padding:24px}
+
+.app-header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
+.app-header .container{display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav{display:flex;gap:12px}
+
+.btn{display:inline-block;padding:10px 16px;border-radius:var(--radius);border:1px solid var(--primary);background:var(--primary);color:#fff;text-decoration:none;font-weight:600}
+.btn:hover{background:var(--primary-600);border-color:var(--primary-600)}
+.btn-outline{background:#fff;color:var(--primary)}
+.btn-outline:hover{background:#fff;border-color:var(--primary-600);color:var(--primary-600)}
+
+.page-title{font-size:40px;font-weight:800;margin:16px 0 6px}
+.page-sub{color:var(--muted);margin-bottom:24px}
+.card{background:#fff;border:1px solid #eee;border-radius:var(--radius);padding:20px}
+.form{display:flex;flex-direction:column;gap:14px;max-width:460px}
+.input{padding:12px 14px;border:1px solid #ddd;border-radius:10px;font-size:16px}
+.helper{color:var(--muted);font-size:14px}
+.link{color:var(--primary);text-decoration:none}
+.link:hover{text-decoration:underline}

@@ -1,0 +1,101 @@
+<section class="hero">
+  <h1>Location de voiture courte durée — Région Parisienne</h1>
+  <p>
+    Service de location courte durée en région parisienne — flotte variée,
+    options manuelles et automatiques, assurance incluse.
+  </p>
+  <div class="actions">
+    <button class="btn btn-primary">Réserver via WhatsApp</button>
+    <button class="btn btn-outline">Voir la flotte</button>
+  </div>
+</section>
+
+<!-- Véhicules Manuels -->
+<section class="block">
+  <h2>Véhicules Manuels</h2>
+  <div *ngIf="loading" class="helper">Chargement...</div>
+  <div class="grid" *ngIf="!loading">
+    <app-car-card
+      *ngFor="let c of manuals"
+      [car]="c"
+      (reserve)="onReserve($event)">
+    </app-car-card>
+  </div>
+</section>
+
+<!-- Véhicules Automatiques -->
+<section class="block">
+  <h2>Véhicules Automatiques</h2>
+  <div *ngIf="loading" class="helper">Chargement...</div>
+  <div class="grid" *ngIf="!loading">
+    <app-car-card
+      *ngFor="let c of autos"
+      [car]="c"
+      (reserve)="onReserve($event)">
+    </app-car-card>
+  </div>
+</section>
+
+<!-- Conditions d’assurance -->
+<section class="insurance">
+  <h2>Conditions d’assurance</h2>
+  <div class="alert insurance-alert">
+    <div class="icon">
+      <span class="material-symbols-outlined">verified_user</span>
+    </div>
+    <div class="text">
+      <p>Assurance incluse dans le prix.</p>
+      <p>Franchise 250€ pour dégât simple &lt;2000€.</p>
+      <p>Franchise 1000€ si dégâts &gt;2000€.</p>
+    </div>
+  </div>
+  <p class="note">
+    Les prix peuvent varier selon saisons et durée de location.
+  </p>
+</section>
+
+<!-- Limites de kilométrage -->
+<section class="limit">
+  <h2>Limites de kilométrage</h2>
+  <div class="grid limit-grid">
+    <div class="limit-box">
+      <div class="limit-icon">!</div>
+      <h3>200 km / jour</h3>
+      <p>Forfait standard : 200 km autorisés par jour.</p>
+    </div>
+    <div class="limit-box">
+      <div class="limit-icon">∞</div>
+      <h3>Km illimité (option)</h3>
+      <p>Option Km illimité disponible en supplément.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact">
+  <h2>Contact & Réservation</h2>
+  <div class="grid-contact">
+    <div>
+      <h3>WhatsApp</h3>
+      <p class="contact-number">+33 6 12 19 30 50</p>
+      <p>Réponse rapide pour réservations et questions.</p>
+    </div>
+    <div>
+      <h3>Localisation</h3>
+      <p>Région parisienne</p>
+      <p>Livraison possible selon options.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Prêt à Rouler ?</h2>
+  <p>
+    Découvrez notre flotte variée (compactes, familiales, premium), profitez de nos tarifs clairs avec assurance incluse et options kilométriques flexibles.
+  </p>
+  <div class="actions">
+    <button class="btn btn-primary">Réserver maintenant</button>
+    <button class="btn btn-outline">Demander un devis</button>
+  </div>
+</section>

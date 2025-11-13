@@ -1,0 +1,18 @@
+<div class="card car" appHighlight>
+  <a class="thumb" [routerLink]="['/cars', car.id]">
+    <ng-container>
+      <img [src]="imageUrl(car.image)" [alt]="car.name">
+    </ng-container>
+  </a>
+
+  <div class="car-body">
+    <h3>{{ car.name }}</h3>
+    <div class="helper">{{ car.transmission }}</div>
+    <div class="price"><b>{{ car.pricePerDay | currencyEur }} / jour</b></div>
+
+    <div class="actions">
+      <a [routerLink]="['/cars', car.id]" class="btn">Détails</a>
+      <a routerLink="/booking" class="btn btn-outline">Réserver</a>
+    </div>
+  </div>
+</div>

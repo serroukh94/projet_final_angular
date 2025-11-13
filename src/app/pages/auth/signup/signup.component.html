@@ -1,0 +1,37 @@
+<h1 class="page-title">Inscription</h1>
+<p class="page-sub">Créez un compte et réservez en un clin d'œil.</p>
+
+<div class="card">
+  <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input class="input" type="text" placeholder="Nom complet" formControlName="fullName" />
+    <small class="helper" *ngIf="f.fullName.touched && f.fullName.invalid">
+      {{ f.fullName.errors?.['required'] ? 'Nom requis.' : '' }}
+      {{ f.fullName.errors?.['minLength'] ? 'Nom trop court.' : '' }}
+    </small>
+
+    <input class="input" type="email" placeholder="Email" formControlName="email" />
+    <small class="helper" *ngIf="f.email.touched && f.email.invalid">
+      {{ f.email.errors?.['required'] ? 'Email requis.' : '' }}
+      {{ f.email.errors?.['email'] ? 'Email invalide.' : '' }}
+    </small>
+
+    <div formGroupName="passwords">
+      <input class="input" type="password" placeholder="Mot de passe" formControlName="password" />
+      <small class="helper" *ngIf="p.password.touched && p.password.invalid">
+        {{ p.password.errors?.['required'] ? 'Mot de passe requis.' : '' }}
+        {{ p.password.errors?.['minlength'] ? '6 caractères minimum.' : '' }}
+      </small>
+
+      <input class="input" type="password" placeholder="Confirmer le mot de passe" formControlName="confirmPassword" />
+      <small class="helper" *ngIf="(form.get('passwords')?.touched && form.get('passwords')?.errors?.['passwordMismatch'])">
+        Les mots de passe ne correspondent pas.
+      </small>
+    </div>
+
+    <button class="btn" type="submit" [disabled]="form.invalid">Créer mon compte</button>
+  </form>
+
+  <p class="helper" style="margin-top:12px">
+    Déjà inscrit ? <a routerLink="/login" class="link">Se connecter</a>
+  </p>
+</div>
