@@ -1,4 +1,5 @@
 <div class="booking-page">
+  <a routerLink="/" class="back-link">← Retour à l'accueil</a>
   <h1>Réserver une voiture</h1>
   <p class="subtitle">Remplissez les informations ci-dessous pour votre réservation.</p>
 
@@ -31,12 +32,10 @@
         id="carModel"
         [(ngModel)]="booking.carModel"
         name="carModel"
+        (change)="onCarModelChange()"
       >
         <option value="">-- Sélectionnez une voiture --</option>
-        <option value="Toyota Yaris">Toyota Yaris</option>
-        <option value="Peugeot 208">Peugeot 208</option>
-        <option value="Renault Clio">Renault Clio</option>
-        <option value="Volkswagen Polo">Volkswagen Polo</option>
+        <option *ngFor="let car of allCars" [value]="car.name">{{ car.name }} - {{ car.pricePerDay }}€/jour</option>
       </select>
     </div>
 
@@ -48,6 +47,7 @@
           type="date"
           [(ngModel)]="booking.startDate"
           name="startDate"
+          (change)="calculatePrice()"
         />
       </div>
 
@@ -58,8 +58,16 @@
           type="date"
           [(ngModel)]="booking.endDate"
           name="endDate"
+          [min]="booking.startDate"
+          (change)="calculatePrice()"
         />
       </div>
+    </div>
+
+    <div *ngIf="numberOfDays > 0 && selectedCar" class="price-summary">
+      <p><strong>Durée :</strong> {{ numberOfDays }} jour(s)</p>
+      <p><strong>Prix par jour :</strong> {{ selectedCar.pricePerDay }} €</p>
+      <p class="total"><strong>Prix total :</strong> {{ totalPrice }} €</p>
     </div>
 
     <div class="form-group">

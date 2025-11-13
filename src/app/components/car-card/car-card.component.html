@@ -12,7 +12,7 @@
 
     <div class="actions">
       <a [routerLink]="['/cars', car.id]" class="btn">Détails</a>
-      <a routerLink="/booking" class="btn btn-outline">Réserver</a>
+      <a [routerLink]="['/booking']" [queryParams]="{carId: car.id}" class="btn btn-outline">Réserver</a>
     </div>
   </div>
 </div>

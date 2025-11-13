@@ -7,6 +7,23 @@
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #d83a3a;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 16px;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: #b02e2e;
+  text-decoration: underline;
+}
+
 .booking-page h1 {
   font-size: 32px;
   font-weight: 800;
