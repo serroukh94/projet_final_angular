@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { CarsService, Car } from '../../services/cars.service';
+import { BookingsService } from '../../services/bookings.service';
 
 @Component({
   selector: 'app-booking',
@@ -15,10 +15,10 @@ import { CarsService, Car } from '../../services/cars.service';
 })
 export class BookingComponent implements OnInit {
   constructor(
-    private http: HttpClient,
     private route: ActivatedRoute,
     private auth: AuthService,
-    private carsSvc: CarsService
+    private carsSvc: CarsService,
+    private bookingsService: BookingsService
   ) {}
 
   booking = {
@@ -132,7 +132,7 @@ export class BookingComponent implements OnInit {
       totalPrice: this.totalPrice
     };
     
-    this.http.post('http://localhost:3000/bookings', bookingData).subscribe({
+    this.bookingsService.createBooking(bookingData).subscribe({
       next: () => {
         this.successMessage = '✅ Votre réservation a bien été enregistrée !';
         this.booking = { fullName: '', email: '', carModel: '', startDate: '', endDate: '', message: '' };
