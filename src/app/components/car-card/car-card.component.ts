@@ -2,11 +2,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Car } from '../../services/cars.service';
 import { RouterLink } from '@angular/router';
+import { HighlightDirective } from '../../directives/highlight.directive';
 
 @Component({
   selector: 'app-car-card',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, HighlightDirective],
   templateUrl: './car-card.component.html',
   styleUrls: ['./car-card.component.css']
 })
