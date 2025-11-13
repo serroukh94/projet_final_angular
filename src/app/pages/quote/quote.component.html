@@ -1,0 +1,119 @@
+<div class="quote-page">
+  <h1>Demander un devis</h1>
+  <p class="subtitle">Remplissez ce formulaire pour recevoir une estimation personnalisée</p>
+
+  <form [formGroup]="quoteForm" (ngSubmit)="submitQuote()" class="quote-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="fullName">Nom complet *</label>
+        <input
+          id="fullName"
+          type="text"
+          placeholder="Ex: Jean Dupont"
+          formControlName="fullName"
+        />
+        <small class="error" *ngIf="quoteForm.get('fullName')?.invalid && quoteForm.get('fullName')?.touched">
+          Le nom complet est requis (minimum 3 caractères).
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input
+          id="email"
+          type="email"
+          placeholder="Ex: jean.dupont@gmail.com"
+          formControlName="email"
+        />
+        <small class="error" *ngIf="quoteForm.get('email')?.invalid && quoteForm.get('email')?.touched">
+          Email valide requis.
+        </small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Téléphone *</label>
+      <input
+        id="phone"
+        type="tel"
+        placeholder="Ex: 0612345678"
+        formControlName="phone"
+      />
+      <small class="error" *ngIf="quoteForm.get('phone')?.invalid && quoteForm.get('phone')?.touched">
+        Numéro de téléphone valide requis (10 chiffres).
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="carModel">Modèle de voiture *</label>
+      <select id="carModel" formControlName="carModel">
+        <option value="">-- Sélectionnez une voiture --</option>
+        <option *ngFor="let car of allCars" [value]="car.name">
+          {{ car.name }} - {{ car.pricePerDay }}€/jour ({{ car.transmission }})
+        </option>
+      </select>
+      <small class="error" *ngIf="quoteForm.get('carModel')?.invalid && quoteForm.get('carModel')?.touched">
+        Veuillez sélectionner une voiture.
+      </small>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="startDate">Date de début *</label>
+        <input
+          id="startDate"
+          type="date"
+          formControlName="startDate"
+        />
+        <small class="error" *ngIf="quoteForm.get('startDate')?.invalid && quoteForm.get('startDate')?.touched">
+          La date de début est requise.
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="endDate">Date de fin *</label>
+        <input
+          id="endDate"
+          type="date"
+          formControlName="endDate"
+          [min]="quoteForm.get('startDate')?.value"
+        />
+        <small class="error" *ngIf="quoteForm.get('endDate')?.invalid && quoteForm.get('endDate')?.touched">
+          La date de fin est requise.
+        </small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Option kilométrage *</label>
+      <div class="radio-group">
+        <label class="radio-option">
+          <input type="radio" formControlName="kmOption" value="standard" />
+          <div class="radio-content">
+            <strong>Standard (200 km/jour)</strong>
+            <span>Inclus dans le prix</span>
+          </div>
+        </label>
+        <label class="radio-option">
+          <input type="radio" formControlName="kmOption" value="unlimited" />
+          <div class="radio-content">
+            <strong>Kilométrage illimité</strong>
+            <span>+15€/jour</span>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Informations supplémentaires</label>
+      <textarea
+        id="message"
+        rows="4"
+        placeholder="Ex: Besoin de livraison, siège bébé, options particulières..."
+        formControlName="message"
+      ></textarea>
+    </div>
+
+    <button type="submit" class="btn-submit">Obtenir mon devis</button>
+  </form>
+</div>
