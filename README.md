@@ -184,7 +184,9 @@ src/app/
 
 ## 👥 Équipe
 
-Groupe de 3 personnes
+Groupe de 2 personnes : 
+- Ben Tama Serroukh Mohamed Rida
+- Rajabaly Redjane
 
 ---
 
