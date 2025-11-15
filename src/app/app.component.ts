@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet, RouterLink } from '@angular/router';
-import { AuthService, User } from './services/auth.service';
+import { Router, RouterOutlet, RouterLink } from '@angular/router';
+import { AuthService, UserProfile } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -13,14 +13,14 @@ import { AuthService, User } from './services/auth.service';
 export class AppComponent {
   title = 'final_angular';
 
-  constructor(public auth: AuthService) {}
+  constructor(public auth: AuthService, private router: Router) {}
 
-  get currentUser(): User | null {
+  get currentUser(): UserProfile | null {
     return this.auth.getCurrentUser();
   }
 
   logout(): void {
     this.auth.logout();
-    window.location.reload();
+    this.router.navigate(['/']);
   }
 }

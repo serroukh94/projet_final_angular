@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FormBuilder, Validators, ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
 
@@ -13,16 +13,23 @@ import { AuthService } from '../../../services/auth.service';
 })
 export class LoginComponent {
   form!: FormGroup;
+  private redirectTo = '/';
 
   constructor(
     private fb: FormBuilder,
     private auth: AuthService,
-    private router: Router // 👈 ajout du Router ici
+    private router: Router,
+    private route: ActivatedRoute
   ) {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]]
     });
+
+    const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
+    if (returnUrl) {
+      this.redirectTo = returnUrl;
+    }
   }
 
   get f(): any { return this.form.controls as any; }
@@ -38,8 +45,7 @@ export class LoginComponent {
       }
 
       alert(`Bienvenue ${user.fullName} !`);
-      // 👇 redirection vers la page d'accueil
-      this.router.navigate(['/']);
+      this.router.navigateByUrl(this.redirectTo);
     });
   }
 }

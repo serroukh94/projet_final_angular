@@ -84,7 +84,7 @@ Application web de **location de voitures courte durée** en région parisienne,
 ```bash
 # Cloner le projet
 git clone <url-du-repo>
-cd final_angular
+cd projet_final_angular
 
 # Installer les dépendances
 npm install
@@ -184,7 +184,9 @@ src/app/
 
 ## 👥 Équipe
 
-Groupe de 3 personnes
+Groupe de 2 personnes : 
+- Ben Tama Serroukh Mohamed Rida
+- Rajabaly Redjane
 
 ---
 
