@@ -20,6 +20,7 @@ export class BookingComponent implements OnInit {
   totalPrice = 0;
   numberOfDays = 0;
   successMessage = '';
+  private readonly dayInMs = 1000 * 60 * 60 * 24;
 
   constructor(
     private fb: FormBuilder,
@@ -58,9 +59,10 @@ export class BookingComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       const carId = params['carId'];
       if (carId) {
-        this.carsSvc.getCar(Number(carId)).subscribe(car => {
+        this.carsSvc.getCar(String(carId)).subscribe(car => {
           this.selectedCar = car;
           this.bookingForm.patchValue({ carModel: car.name });
+          this.calculatePrice();
         });
       }
     });
@@ -92,16 +94,16 @@ export class BookingComponent implements OnInit {
     const start = new Date(startDate);
     const end = new Date(endDate);
     const diffTime = end.getTime() - start.getTime();
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-    if (diffDays < 0) {
+    if (diffTime < 0) {
       this.totalPrice = 0;
       this.numberOfDays = 0;
       return;
     }
 
-    this.numberOfDays = diffDays;
-    this.totalPrice = diffDays * this.selectedCar.pricePerDay;
+    const rawDays = Math.ceil(diffTime / this.dayInMs);
+    this.numberOfDays = Math.max(rawDays, 1);
+    this.totalPrice = this.numberOfDays * this.selectedCar.pricePerDay;
   }
 
   submitForm() {
@@ -126,6 +128,16 @@ export class BookingComponent implements OnInit {
     }
 
     // Envoi la réservation dans le backend
+    if (!this.selectedCar) {
+      alert('Merci de sélectionner un modèle de voiture.');
+      return;
+    }
+
+    if (this.numberOfDays <= 0) {
+      alert('La durée de location doit être d\'au moins un jour.');
+      return;
+    }
+
     const bookingData = {
       ...this.bookingForm.value,
       numberOfDays: this.numberOfDays,

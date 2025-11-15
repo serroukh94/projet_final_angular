@@ -30,7 +30,7 @@
         <div class="car-icon">🚙</div>
         <div class="car-info">
           <h3>{{ quoteData.carModel }}</h3>
-          <p>{{ quoteData.carDetails?.transmission }} • {{ quoteData.carDetails?.seats }} places</p>
+          <p>{{ quoteData.carDetails?.transmission || 'Transmission à préciser' }}</p>
         </div>
         <div class="car-price">
           {{ quoteData.carDetails?.pricePerDay }}€<span>/jour</span>
